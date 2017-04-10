@@ -194,8 +194,13 @@ public class WeatherActivity extends AppCompatActivity {
             TextView minText = (TextView) view.findViewById(R.id.min_text);
             dateText.setText(forecast.date);
             infoText.setText(forecast.more.info);
-            maxText.setText(forecast.temperature.max);
-            minText.setText(forecast.temperature.min);
+            String temperature_max = forecast.temperature.max + " C";
+            String tempareature_min = forecast.temperature.min + " C";
+            //maxText.setText(forecast.temperature.max);
+            //minText.setText(forecast.temperature.min);
+
+            maxText.setText(temperature_max);
+            minText.setText(tempareature_min);
             forecastLayout.addView(view);
 
         }
@@ -205,9 +210,9 @@ public class WeatherActivity extends AppCompatActivity {
             pm25Text.setText(weather.aqi.city.pm25);
         }
 
-        String comfort = "舒适度" + weather.suggestion.comfort.info;
-        String carWash = "洗车指数" + weather.suggestion.carWash.info;
-        String sport = "运动指数" + weather.suggestion.sport.info;
+        String comfort = "舒适度: " + weather.suggestion.comfort.info;
+        String carWash = "洗车指数: " + weather.suggestion.carWash.info;
+        String sport = "运动指数: " + weather.suggestion.sport.info;
 
         comfortText.setText(comfort);
         carWashText.setText(carWash);
